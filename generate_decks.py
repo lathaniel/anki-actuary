@@ -2,12 +2,17 @@ import ntpath
 import genanki
 import csv
 from pathlib import Path
-from glob import glob, iglob
+from glob import iglob
 import os
 
 # General formula model
 
 questionStyle = 'font-size: 50px; font-weight: bold;'
+
+
+def divWrap(child: any, style: str = ''):
+    return f"<div style='{style}'>{child}</div>"
+
 
 fxModel = genanki.Model(
     model_id=45827598,
@@ -19,12 +24,13 @@ fxModel = genanki.Model(
     templates=[
         {
             'name': 'Card 1',
-            'qfmt': "<div style='{}'>{{{{Question}}}}</div>".format(questionStyle),
+            'qfmt': divWrap(child='{{{{}}}}', style=questionStyle),
             'afmt': '{{FrontSide}}<hr id="answer">{{Answer}}',
         },
     ],
-    css=open('./assets/css/base.css', 'r').read()
+    css=open('./assets/css/formulaCard.css', 'r').read()
 )
+
 
 def main():
     # Do SOA Files
@@ -54,8 +60,8 @@ def main():
 
                 # once done, package the deck
                 Path('build/').mkdir(parents=True, exist_ok=True)
-                genanki.Package(deck).write_to_file('build/erm.apkg')
+                genanki.Package(deck).write_to_file(f'build/{deckName}.apkg')
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
