@@ -5,8 +5,6 @@ from pathlib import Path
 from glob import iglob
 import os
 
-# General formula model
-
 questionStyle = 'font-size: 50px; font-weight: bold;'
 
 
@@ -14,6 +12,7 @@ def divWrap(child: any, style: str = ''):
     return f"<div style='{style}'>{child}</div>"
 
 
+# General formula model
 fxModel = genanki.Model(
     model_id=45827598,
     name='Formula Model',
