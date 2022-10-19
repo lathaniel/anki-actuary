@@ -23,7 +23,7 @@ fxModel = genanki.Model(
     templates=[
         {
             'name': 'Card 1',
-            'qfmt': divWrap(child='{{{{}}}}', style=questionStyle),
+            'qfmt': divWrap(child='{{Question}}', style=questionStyle),
             'afmt': '{{FrontSide}}<hr id="answer">{{Answer}}',
         },
     ],
