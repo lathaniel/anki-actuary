@@ -1,0 +1,61 @@
+name: "Anki Deck Validation"
+on: 
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lint_markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      
+      - name: Install Markdown Linter
+        run: npm install -g markdownlint-cli
+
+      - name: Run Markdown Linter (markdownlint-cli)
+        run: markdownlint **/*.md
+
+  lint_python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up Python environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+      - name: Run Python Linter (flake8)
+        uses: py-actions/flake8@v2
+        with:
+          path: src
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+          cashe: 'pip'
+      
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Run deck generation
+        run: |
+          mkdir build
+          py generate_decks.py
