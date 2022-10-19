@@ -1,0 +1,7 @@
+Merton Model,\(\frac{\ln(\frac{B}{X})-(r-.5\sigma^2)T}{\sigma\sqrt{t}}\)
+KMV Model,\(DD = \dfrac{X-\tilde B}{X\sigma}\)
+TE VAR,"
+\(\alpha\sqrt{(x-x_0)^\top\mathbf{\Sigma}(x-x_0)}\)
+<br/>
+<br/>
+where \((x-x_0)\) is a column vector"
