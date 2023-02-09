@@ -1,9 +1,10 @@
 import ntpath
-import genanki
 import csv
 from pathlib import Path
 from glob import iglob
 import os
+
+import genanki
 
 questionStyle = 'font-size: 50px; font-weight: bold;'
 
