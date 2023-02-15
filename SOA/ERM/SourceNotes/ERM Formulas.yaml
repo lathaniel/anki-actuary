@@ -1,0 +1,24 @@
+Name: ERM Formulas
+
+Cards:
+
+  - Front: Merton Model
+    Back: |
+      \(\frac{\ln(\frac{B}{X})-(r-.5\sigma^2)T}{\sigma\sqrt{t}}\)
+    Style: formulaCard
+    
+  - Front: KMV Model
+    Back: |
+      \(DD = \dfrac{X-\tilde B}{X\sigma}\)
+    Style: formulaCard
+    
+  - Front: TE VAR
+    Back: |
+      \(\alpha\sqrt{(x-x_0)^\top\mathbf{\Sigma}(x-x_0)}\)<br/><br/>where \((x-x_0)\) is a column vector
+    Style: formulaCard
+    
+  - Front: Altman's Z-score
+    Back: |
+      \(Z_n = 0.012X_{1,n} + 0.014X_{2,n} + 0.033X_{3,n}+0.006X_{4,n}+0.999X_{5,n}\)<br/><br/>\(X_{1,n}\)= Ratio of working capital to total assets<br/>\(X_{2,n}\)= Ratio of retained earnings to total assets<br/>\(X_{3,n}\)= Ratio of EBIT to total assets<br/>\(X_{4,n}\)= Ratio of MV of equity to BV of liabilities<br/>\(X_{5,n}\)= Ratio of sales to total assets
+    Style: formulaCard
+    

@@ -1,0 +1,71 @@
+Name: ERM Concepts
+
+Cards:
+
+  - Front: Describe the different types of margin
+    Back: |
+      <ul>
+        <li>Initial (Amount)</li>
+        <li>Maintenance Margin (Threshold)</li>
+        <li>Variation Margin (Amount)</li>
+      </ul>
+    Style: formulaCard
+  
+  - Front: What copulas have zero upper tail dependence?
+    Back:
+      Gaussian & Clayton's
+    Style: formulaCard
+
+  - Front: Three types of internal controls
+    Back:
+      <ul>
+        <li>Preventive</li>
+        <li>Detective</li>
+        <li>Corrective</li>
+      </ul>
+    Style: formulaCard
+
+  - Front: What are the five components of internal control?
+    Back:
+      <ul>
+        <li>Control Environment</li>
+        <li>Risk Assessment</li>
+        <li>Control Activities</li>
+        <li>Info & Communication</li>
+        <li>Monitoring Activities</li>
+      </ul>
+    Style: formulaCard
+
+  - Front: What are the four categories of a response to a risk?
+    Back:
+      <ul>
+        <li>Reduce</li>
+        <li>Remove</li>
+        <li>Transfer (Non-Capital Market vs. Capital Market)</li>
+        <li>Accept</li>
+      </ul>
+    Style: formulaCard
+
+  - Front: What are the properties of a coherent capital allocation?
+    Back:
+      <ul>
+        <li>No Undercut</li>
+        <li>Symmetry</li>
+        <li>Risk-Free Allocation</li>
+      </ul>
+    Style: formulaCard
+
+  - Front: What are some copulas with positive upper tail dependence?
+    Back:
+      "Student's t, Gumbel"
+    Style: formulaCard
+
+  - Front: List the key features of ERM
+    Back:
+      <ul>
+        <li>Governance Structure</li>
+        <li>Risk Mgmt Policy</li>
+        <li>Tolerance Statment</li>
+        <li>Feedback Loop</li>
+      </ul>
+    Style: formulaCard

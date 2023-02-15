@@ -1,2 +1,3 @@
 genanki
 flake8
+pyyaml

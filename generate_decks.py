@@ -5,6 +5,7 @@ from glob import iglob
 import os
 
 import genanki
+import yaml
 
 questionStyle = 'font-size: 50px; font-weight: bold;'
 
@@ -37,13 +38,13 @@ def main():
     directory = 'SOA'
     for subdir, dirs, _ in os.walk(directory):
         for dir in dirs:
-            # Loop through directories and generate decks from .csv files
-            for notesFile in iglob(os.path.join(subdir, dir, '*.csv')):
-                deckName = ntpath.basename(notesFile).split('.')[0]
-
-                # Read csv into an array
+            # Loop through directories and generate decks from .yaml files
+            for notesFile in iglob(os.path.join(subdir, dir, '*.yaml')):
+                # Load YAML data
                 with open(notesFile) as f:
-                    noteData = list(csv.reader(f))
+                    deckData = yaml.safe_load(f)
+
+                deckName = deckData['Name']
 
                 # Create a deck
                 deck = genanki.Deck(
@@ -52,10 +53,10 @@ def main():
                 )
 
                 # For each note in the file, add it to the deck
-                for note in noteData:
+                for note in deckData['Cards']:
                     deck.add_note(genanki.Note(
                         model=fxModel,
-                        fields=note
+                        fields=[note['Front'], note['Back']]
                     ))
 
                 # once done, package the deck
