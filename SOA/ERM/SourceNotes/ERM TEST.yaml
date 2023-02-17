@@ -106,3 +106,33 @@ Cards:
     Section: ERM-702
     metadata:
       Style: formulaCard
+
+  - Question: Tools and Techniques for Risk Identification
+    Section: FERM CH8
+    Answer: |
+      Tools:<br>
+        <ul>
+          <li>SWOT</li>
+          <li>Risk Checklists</li>
+          <li>Risk Taxonomy</li>
+          <li>Risk Prompt lists</li>
+          <li>Trigger Questions</li>
+          <li>Case Studies</li>
+          <li>Risk-focused Process Analysis</li>
+        </ul>
+      Techniques:<br>
+        <ul>
+          <li>Brainstorming</li>
+          <li>Independent group analysis</li>
+          <li>Surveys</li>
+          <li>Gap Analysis</li>
+          <li>Delphi Technique</li>
+          <li>Interviews</li>
+          <li>Working groups</li>
+        </ul>
+    Notes: |
+      Be sure to know:<br>
+      <ul>
+        <li>Internal/External for SWOT</li>
+        <li>Which tools are more/less detailed</li>
+      </ul>
