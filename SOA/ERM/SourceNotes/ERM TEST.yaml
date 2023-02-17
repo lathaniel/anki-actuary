@@ -1,32 +1,57 @@
 Name: ERM Concepts
 
+Model:
+  name: 'Basic Model'
+  # Random (and unique) identifier
+  model_id: 1794800451
+  fields: 
+    - Question
+    - Answer
+    - Section
+    - Notes
+  templates:
+    - name: 'Card 1'
+      qfmt: <div class="question">{{Question}}</div>
+      afmt: |
+        {{FrontSide}}
+        <div class="section">{{Section}}</div>
+        <hr id="answer">
+        {{Answer}}
+        <hr id="answer">
+        <div class="notes">{{Notes}}</div>
+  # Path should be relative to project root
+  css: 'assets/css/formulaCard.css'
+
 Cards:
 
-  - Front: Describe the different types of margin
-    Back: |
+  - Question: Describe the different types of margin
+    Answer: |
       <ul>
         <li>Initial (Amount)</li>
         <li>Maintenance Margin (Threshold)</li>
         <li>Variation Margin (Amount)</li>
       </ul>
-    Style: formulaCard
+    metadata:
+      Style: formulaCard
   
-  - Front: What copulas have zero upper tail dependence?
-    Back:
+  - Question: What copulas have zero upper tail dependence?
+    Answer:
       Gaussian & Clayton's
-    Style: formulaCard
+    metadata:
+      Style: formulaCard
 
-  - Front: Three types of internal controls
-    Back:
+  - Question: Three types of internal controls
+    Answer:
       <ul>
         <li>Preventive</li>
         <li>Detective</li>
         <li>Corrective</li>
       </ul>
-    Style: formulaCard
+    metadata:
+      Style: formulaCard
 
-  - Front: What are the five components of internal control?
-    Back:
+  - Question: What are the five components of internal control?
+    Answer:
       <ul>
         <li>Control Environment</li>
         <li>Risk Assessment</li>
@@ -34,38 +59,50 @@ Cards:
         <li>Info & Communication</li>
         <li>Monitoring Activities</li>
       </ul>
-    Style: formulaCard
+    metadata:
+      Style: formulaCard
 
-  - Front: What are the four categories of a response to a risk?
-    Back:
+  - Question: What are the four categories of a response to a risk?
+    Answer:
       <ul>
         <li>Reduce</li>
         <li>Remove</li>
         <li>Transfer (Non-Capital Market vs. Capital Market)</li>
         <li>Accept</li>
       </ul>
-    Style: formulaCard
+    Notes: |
+      <strong>Notes</strong>:<br/>
+      <div style="font-size:0.90em">
+        Know some examples of non-capital market and capital market transfers
+      </div>
 
-  - Front: What are the properties of a coherent capital allocation?
-    Back:
+    metadata:
+      Style: formulaCard
+
+  - Question: What are the properties of a coherent capital allocation?
+    Answer:
       <ul>
         <li>No Undercut</li>
         <li>Symmetry</li>
         <li>Risk-Free Allocation</li>
       </ul>
-    Style: formulaCard
+    metadata:
+      Style: formulaCard
 
-  - Front: What are some copulas with positive upper tail dependence?
-    Back:
+  - Question: What are some copulas with positive upper tail dependence?
+    Answer:
       "Student's t, Gumbel"
-    Style: formulaCard
+    metadata:
+      Style: formulaCard
 
-  - Front: List the key features of ERM
-    Back:
+  - Question: List the key features of ERM
+    Answer:
       <ul>
         <li>Governance Structure</li>
         <li>Risk Mgmt Policy</li>
         <li>Tolerance Statment</li>
         <li>Feedback Loop</li>
       </ul>
-    Style: formulaCard
+    Section: ERM-702
+    metadata:
+      Style: formulaCard

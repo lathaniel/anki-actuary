@@ -5,31 +5,6 @@ import os
 import genanki
 import yaml
 
-questionStyle = 'font-size: 50px; font-weight: bold;'
-
-
-def divWrap(child: any, style: str = ''):
-    return f"<div style='{style}'>{child}</div>"
-
-
-# General formula model
-fxModel = genanki.Model(
-    model_id=45827598,
-    name='Formula Model',
-    fields=[
-        {'name': 'Question'},
-        {'name': 'Answer'},
-    ],
-    templates=[
-        {
-            'name': 'Card 1',
-            'qfmt': divWrap(child='{{Question}}', style=questionStyle),
-            'afmt': '{{FrontSide}}<hr id="answer">{{Answer}}',
-        },
-    ],
-    css=open('./assets/css/formulaCard.css', 'r').read()
-)
-
 
 def main():
     # Do SOA Files
@@ -52,9 +27,16 @@ def main():
 
                 # For each note in the file, add it to the deck
                 for note in deckData['Cards']:
+                    useCss: bool = 'css' in deckData['Model'].keys()
                     deck.add_note(genanki.Note(
-                        model=fxModel,
-                        fields=[note['Front'], note['Back']]
+                        model=genanki.Model(
+                            model_id=deckData['Model']['model_id'],
+                            name=deckData['Model']['name'],
+                            fields=[{'name': x} for x in deckData['Model']['fields']],
+                            templates=deckData['Model']['templates'],
+                            css=open(deckData['Model']['css'], 'r').read() if useCss else None
+                        ),
+                        fields=[note[x] if x in note.keys() else '' for x in deckData['Model']['fields']]
                     ))
 
                 # once done, package the deck
