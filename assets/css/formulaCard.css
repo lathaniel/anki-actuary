@@ -1,21 +1,79 @@
 .card {
-    font-size: 38px;
-    text-align: center;
+  font-size: 38px;
+  text-align: center;
 }
 
 div.question {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 div.section {
-    font-size: 0.75em;
-    color: red;
-    text-align: start;
+  font-size: 0.65em;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 div.notes {
-    font-size: 0.90em;
-    text-align: start;
-    color: gray;
+  margin-top: 15px;
+  font-size: 0.75em;
+  text-align: start;
+  color: gray;
+}
+
+.backside {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.backside div {
+  flex: 1 1 0px;
+  margin: auto;
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+}
+
+.pros-cons-list {
+  display: flex;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.pros-cons-list .pros {
+  color: green;
+}
+
+.pros-cons-list .cons {
+  color: red;
+}
+
+.pros-cons-list div {
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 7px;
+  text-align: left;
+  padding: 5px;
+}
+
+.pros-cons-list div:first-child {
+  margin-right: 20px;
 }

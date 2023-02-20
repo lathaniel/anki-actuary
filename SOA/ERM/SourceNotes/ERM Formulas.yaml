@@ -7,10 +7,19 @@ Model:
   fields: 
     - Question
     - Answer
+    - Section
+    - Notes
   templates:
     - name: 'Card 1'
       qfmt: <div class="question">{{Question}}</div>
-      afmt: '{{FrontSide}}<hr id="answer">{{Answer}}'
+      afmt: |
+        {{FrontSide}}
+        <div class="section">{{Section}}</div>
+        <hr id="answer">
+        <div class='backside'>
+          {{Answer}}
+          <div class="notes">{{Notes}}</div>
+        </div>
   # Path should be relative to project root
   css: 'assets/css/formulaCard.css'
 
@@ -36,7 +45,45 @@ Cards:
     
   - Question: Altman's Z-score
     Answer: |
-      \(Z_n = 0.012X_{1,n} + 0.014X_{2,n} + 0.033X_{3,n}+0.006X_{4,n}+0.999X_{5,n}\)<br/><br/>\(X_{1,n}\)= Ratio of working capital to total assets<br/>\(X_{2,n}\)= Ratio of retained earnings to total assets<br/>\(X_{3,n}\)= Ratio of EBIT to total assets<br/>\(X_{4,n}\)= Ratio of MV of equity to BV of liabilities<br/>\(X_{5,n}\)= Ratio of sales to total assets
+      \(Z_n = 0.012X_{1,n} 
+      + 0.014X_{2,n}
+      + 0.033X_{3,n}
+      + 0.006X_{4,n}
+      + 0.999X_{5,n}\)
+    Notes: |
+      \(X_{1,n}\) = Ratio of working capital to total assets<br/>
+      \(X_{2,n}\) = Ratio of retained earnings to total assets<br/>
+      \(X_{3,n}\) = Ratio of EBIT to total assets<br/>
+      \(X_{4,n}\) = Ratio of MV of equity to BV of liabilities<br/>
+      \(X_{5,n}\) = Ratio of sales to total assets<br><br>
+
+      Popular metric used in the manufacturing space. Closer to 3 => Solid; Closer to 0 => headed for bankruptcy
     metadata:
       Style: formulaCard
     
+  - Question: How does the standard error of a MC estimate change?
+    Answer: |
+      With the number of simulations, k, it decreases at a rate of \(\dfrac{1}{\sqrt{k}}\)
+    Section: VAR Ch. 12
+    Notes: |
+      Practical application: Can be used to determine the number of simulations needed to achieve
+      a desired standard error (or reduction).
+
+  - Question: Simulating stock price movement with GBM
+    Answer: |
+      \(dS_t = \mu_tS_td_t + \sigma_tS_tdz\)
+    Section: VAR Ch. 12
+    Notes: |
+      Key concepts:
+      <ul>
+      <li>\(dz\) applies random shocks (via normal dist)</li>
+      <li>GBM does not allow for sudden jumps</li>
+      </ul>
+  
+  - Question: Mean-reverting stochastic differential equation
+    Section: VAR Ch. 12
+    Answer: \(dr_t = \kappa(\theta - r_t)dt + \sigma r_t^{\gamma}dz_t\)
+
+  - Question: Pearson correlation coefficient
+    Answer: \(\dfrac{Cov(X,Y)}{\sigma_x \sigma_y}\)
+    Section: FERM Ch. 9

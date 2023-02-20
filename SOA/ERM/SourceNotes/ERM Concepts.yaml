@@ -1,0 +1,230 @@
+Name: ERM Concepts
+
+Model:
+  name: 'Basic Model'
+  # Random (and unique) identifier
+  model_id: 1794800451
+  fields: 
+    - Question
+    - Answer
+    - Section
+    - Notes
+  templates:
+    - name: 'Card 1'
+      qfmt: <div class="question">{{Question}}</div>
+      afmt: |
+        {{FrontSide}}
+        <div class="section">{{Section}}</div>
+        <hr id="answer">
+        <div class='backside'>
+          <div>{{Answer}}</div>
+          <div class="notes">{{Notes}}</div>
+        </div>
+  # Path should be relative to project root
+  css: 'assets/css/formulaCard.css'
+
+Cards:
+
+  - Question: Describe the different types of margin
+    Answer: |
+      <ul>
+        <li>Initial (Amount)</li>
+        <li>Maintenance Margin (Threshold)</li>
+        <li>Variation Margin (Amount)</li>
+      </ul>
+    metadata:
+      Style: formulaCard
+  
+  - Question: What copulas have zero upper tail dependence?
+    Answer:
+      Gaussian & Clayton's
+    metadata:
+      Style: formulaCard
+
+  - Question: Three types of internal controls
+    Answer:
+      <ul>
+        <li>Preventive</li>
+        <li>Detective</li>
+        <li>Corrective</li>
+      </ul>
+    metadata:
+      Style: formulaCard
+
+  - Question: What are the five components of internal control?
+    Answer:
+      <ul>
+        <li>Control Environment</li>
+        <li>Risk Assessment</li>
+        <li>Control Activities</li>
+        <li>Info & Communication</li>
+        <li>Monitoring Activities</li>
+      </ul>
+    metadata:
+      Style: formulaCard
+
+  - Question: What are the four categories of a response to a risk?
+    Answer:
+      <ul>
+        <li>Reduce</li>
+        <li>Remove</li>
+        <li>Transfer (Non-Capital Market vs. Capital Market)</li>
+        <li>Accept</li>
+      </ul>
+    Notes: |
+      <strong>Notes</strong>:<br/>
+      <div style="font-size:0.90em">
+        Know some examples of non-capital market and capital market transfers
+      </div>
+
+    metadata:
+      Style: formulaCard
+
+  - Question: What are the properties of a coherent capital allocation?
+    Answer:
+      <ul>
+        <li>No Undercut</li>
+        <li>Symmetry</li>
+        <li>Risk-Free Allocation</li>
+      </ul>
+    metadata:
+      Style: formulaCard
+
+  - Question: What are some copulas with positive upper tail dependence?
+    Answer:
+      "Student's t, Gumbel"
+    metadata:
+      Style: formulaCard
+
+  - Question: List the key features of ERM
+    Answer:
+      <ul>
+        <li>Governance Structure</li>
+        <li>Risk Mgmt Policy</li>
+        <li>Tolerance Statment</li>
+        <li>Feedback Loop</li>
+      </ul>
+    Section: ERM-702
+    metadata:
+      Style: formulaCard
+
+  - Question: Tools and Techniques for Risk Identification
+    Section: FERM CH8
+    Answer: |
+      <table>
+        <thead>
+          <tr>
+            <th>Tools &#128296;</th>
+            <th>Techniques &#128161;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SWOT</td>
+            <td>Brainstorming</td>
+          </tr>
+          <tr>
+            <td>Risk Checklists</td>
+            <td>Independent group analysis</td>
+          </tr>
+          <tr>
+            <td>Risk Taxonomay</td>
+            <td>Surveys</td>
+          </tr>
+          <tr>
+            <td>Risk Prompt Lists</td>
+            <td>Delphi Technique</td>
+          </tr>
+          <tr>
+            <td>Trigger Questions</td>
+            <td>Gap analysis</td>
+          </tr>
+          <tr>
+            <td>Case Studies</td>
+            <td>Interviews</td>
+          </tr>
+          <tr>
+            <td>Risk-focused process analysis</td>
+            <td>Working groups</td>
+          </tr>
+        </tbody>
+      </table>
+    Notes: |
+      Be sure to know:<br>
+      <ul>
+        <li>Internal/External for SWOT</li>
+        <li>Which tools are more/less detailed</li>
+      </ul>
+  
+  - Question: What are some methods to accelerate monte carlo estimation?
+    Answer: |
+      <table>
+        <thead>
+          <tr>
+            <th>Techniques<br></th>
+            <th> Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Antithetic Variables</td>
+            <td>Simplest method</td>
+          </tr>
+          <tr>
+            <td>Control Variate</td>
+            <td>More complex</td>
+          </tr>
+          <tr>
+            <td>Importance Sampling</td>
+            <td>Considered most effective method</td>
+          </tr>
+          <tr>
+            <td>Stratified Sampling</td>
+            <td>Pretty simple<br></td>
+          </tr>
+        </tbody>
+      </table>
+  
+  - Question: How do equilibrium models differ from no-arbitrage models?
+    Answer: |
+      For an arbitrage/no-arbitrage model, the model's term structure will match
+      the real market term structure. This is not true for an equilibrium model.
+    Section: VAR Ch. 12
+  
+  - Question: Describe the Brennan/Schwartz Model
+    Section: VAR Ch. 12
+    Answer: |
+      Models both a short-term and a long-term interest rate, both
+      of which are modeled using mean-reverting SDE formulas
+
+  - Question: Steps to perform Cholesky Decomposition
+    Section: VAR Ch. 12
+    Answer: |
+      <ol>
+        <li>Solve for T using dependency structure R: \(R = T T^\top\)</li>
+        <li>Multiply against your vector of random draws: \(\epsilon = T \eta\)</li>
+      </ol>
+    Notes: |
+      <strong>T:</strong> a <em>lower triangular matrix.</em><br>
+      <strong>R:</strong> some correlation structure (e.g. obtained through historical data)<br>
+      
+  - Question: Pros/Cons of Bootstrap Method
+    Answer: |
+      <div class="pros-cons-list">      
+        <div class="pros">
+          <strong>Pros</strong><br>
+          <ul>
+            <li>Non-parametric</li>
+            <li>Handles fat tails, jumps, etc.</li>
+            <li>Accounts for correlations across series</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <strong>Cons</strong><br>
+           <ul>
+            <li>Need sufficient data</li>
+            <li>Assumes returns are i.i.d.</li>
+          </ul>
+        </div>
+      </div>
+    Section: VAR Ch. 12
