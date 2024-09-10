@@ -23,34 +23,29 @@ The decks are currently planned to be laid out as follows:
 ├───CAS
 │   └───{Exam}
 │       └───SourceNotes
-│               Anki Deck Name.csv
-│               Other Anki Deck Name.csv
-│               Another Anki Deck Name.csv
+│               Anki Deck Name.YAML
+│               Other Anki Deck Name.YAML
+│               Another Anki Deck Name.YAML
 │
 └───SOA
     └───{Exam}
         └───SourceNotes
-                Anki Deck Name.csv
-                Other Anki Deck Name.csv
-                Another Anki Deck Name.csv
+                Anki Deck Name.YAML
+                Other Anki Deck Name.YAML
+                Another Anki Deck Name.YAML
 ```
 
 Under either the SOA or the CAS folder, a subfolder should exist
-for each exam that has any decks. Within that exam subfolder,
-decks should be saved as CSV files under a SourceNotes directory.
+for each exam that has any decks. Within that exam subfolder, each
+deck should be saved as a separate YAML file under a SourceNotes directory.
 
 ## Usage
 
 ### Creating a new deck
 
-Currently, CSV files are the only way to upload a deck
-to this repository (the end goal will likely be JSON).
+Currently, decks are defined via YAML files.
 
-The first column in the csv file is assumed to be the
-front of the Anki card. The second column is assumed
-to be the back.
-
-Formatting is defined in the css files under `./assets/css`.
+Formatting of the cards in the deck is defined in the css files under `./assets/css`.
 To create styling for a card, the desired stylesheet can
 be read into the `css` attribute of `genanki.Model()`
 
@@ -81,7 +76,7 @@ py ./generate_decks.py
 #### 3. Output
 
 Running generate_decks.py will create Anki .apkg files in
-a `build/` directory with the same name as the CSV files
+a `build/` directory with the same name as the YAML files
 used to create them.
 
 ## Contributing

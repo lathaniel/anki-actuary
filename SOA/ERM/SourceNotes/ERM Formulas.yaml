@@ -4,7 +4,7 @@ Model:
   name: 'Formula Model'
   # Random (and unique) identifier
   model_id: 1710722529
-  fields: 
+  fields:
     - Question
     - Answer
     - Section
@@ -30,22 +30,22 @@ Cards:
       \(\frac{\ln(\frac{B}{X})-(r-.5\sigma^2)T}{\sigma\sqrt{t}}\)
     metadata:
       Style: formulaCard
-    
+
   - Question: KMV Model
     Answer: |
       \(DD = \dfrac{X-\tilde B}{X\sigma}\)
     metadata:
       Style: formulaCard
-    
+
   - Question: TE VAR
     Answer: |
       \(\alpha\sqrt{(x-x_0)^\top\mathbf{\Sigma}(x-x_0)}\)<br/><br/>where \((x-x_0)\) is a column vector
     metadata:
       Style: formulaCard
-    
+
   - Question: Altman's Z-score
     Answer: |
-      \(Z_n = 0.012X_{1,n} 
+      \(Z_n = 0.012X_{1,n}
       + 0.014X_{2,n}
       + 0.033X_{3,n}
       + 0.006X_{4,n}
@@ -60,7 +60,7 @@ Cards:
       Popular metric used in the manufacturing space. Closer to 3 => Solid; Closer to 0 => headed for bankruptcy
     metadata:
       Style: formulaCard
-    
+
   - Question: How does the standard error of a MC estimate change?
     Answer: |
       With the number of simulations, k, it decreases at a rate of \(\dfrac{1}{\sqrt{k}}\)
@@ -79,7 +79,7 @@ Cards:
       <li>\(dz\) applies random shocks (via normal dist)</li>
       <li>GBM does not allow for sudden jumps</li>
       </ul>
-  
+
   - Question: Mean-reverting stochastic differential equation
     Section: VAR Ch. 12
     Answer: \(dr_t = \kappa(\theta - r_t)dt + \sigma r_t^{\gamma}dz_t\)
