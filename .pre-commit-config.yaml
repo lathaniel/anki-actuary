@@ -13,3 +13,7 @@ repos:
   rev: v0.33.0
   hooks:
   - id: markdownlint
+-   repo: https://github.com/pycqa/flake8
+    rev: '7.1.1'  # pick a git hash / tag to point to
+    hooks:
+    -   id: flake8
