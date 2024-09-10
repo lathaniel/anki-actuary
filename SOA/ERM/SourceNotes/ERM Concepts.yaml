@@ -4,7 +4,7 @@ Model:
   name: 'Basic Model'
   # Random (and unique) identifier
   model_id: 1794800451
-  fields: 
+  fields:
     - Question
     - Answer
     - Section
@@ -34,7 +34,7 @@ Cards:
       </ul>
     metadata:
       Style: formulaCard
-  
+
   - Question: What copulas have zero upper tail dependence?
     Answer:
       Gaussian & Clayton's
@@ -155,7 +155,7 @@ Cards:
         <li>Internal/External for SWOT</li>
         <li>Which tools are more/less detailed</li>
       </ul>
-  
+
   - Question: What are some methods to accelerate monte carlo estimation?
     Answer: |
       <table>
@@ -184,13 +184,13 @@ Cards:
           </tr>
         </tbody>
       </table>
-  
+
   - Question: How do equilibrium models differ from no-arbitrage models?
     Answer: |
       For an arbitrage/no-arbitrage model, the model's term structure will match
       the real market term structure. This is not true for an equilibrium model.
     Section: VAR Ch. 12
-  
+
   - Question: Describe the Brennan/Schwartz Model
     Section: VAR Ch. 12
     Answer: |
@@ -207,10 +207,10 @@ Cards:
     Notes: |
       <strong>T:</strong> a <em>lower triangular matrix.</em><br>
       <strong>R:</strong> some correlation structure (e.g. obtained through historical data)<br>
-      
+
   - Question: Pros/Cons of Bootstrap Method
     Answer: |
-      <div class="pros-cons-list">      
+      <div class="pros-cons-list">
         <div class="pros">
           <strong>Pros</strong><br>
           <ul>

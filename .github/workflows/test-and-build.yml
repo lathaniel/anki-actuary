@@ -1,5 +1,5 @@
 name: "Anki Deck Validation"
-on: 
+on:
   pull_request:
     branches:
       - main
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      
+
       - name: Install Markdown Linter
         run: npm install -g markdownlint-cli
 
@@ -36,7 +36,7 @@ jobs:
           python-version: "3.8"
       - name: Run Python Linter (flake8)
         uses: py-actions/flake8@v2
-  
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -48,11 +48,11 @@ jobs:
         with:
           python-version: "3.8"
           cashe: 'pip'
-      
+
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-      
+
       - name: Run deck generation
         run: |
           mkdir build
