@@ -1,0 +1,60 @@
+Name: CFE Concepts
+
+Model:
+  name: 'Basic Model'
+  # Random (and unique) identifier
+  model_id: 1794800452
+  fields:
+    - Question
+    - Answer
+    - Section
+    - Notes
+  templates:
+    - name: 'Card 1'
+      qfmt: <div class="question">{{Question}}</div>
+      afmt: |
+        {{FrontSide}}
+        <div class="section">{{Section}}</div>
+        <hr id="answer">
+        <div class='backside'>
+          <div>{{Answer}}</div>
+          <div class="notes">{{Notes}}</div>
+        </div>
+  # Path should be relative to project root
+  css: 'assets/css/formulaCard.css'
+
+Cards:
+
+  - Question: Describe the different levels of diversification
+    Answer: |
+      <ul>
+        <li>(>95% of Revenue) <strong>Single Business</strong></li>
+        <li>(70%-95% of Revenue) <strong>Dominant Business</strong></li>
+        <li>(<70% of Revenue) <strong>Related Constrained</strong></li>
+          <ul>
+            <li>
+              All businesses share product, tech, & distribution linkages
+            </li>
+          </ul>
+        <li>(<70% of Revenue) <strong>Related Linked</strong></li>
+          <ul>
+            <li>
+              Business only share limited links.
+            </li>
+          </ul>
+        <li>(<70% of Revenue) <strong>Unrelated</strong></li>
+          <ul>
+            <li>
+              Firm's make no effort to share resources between businesses
+            </li>
+          </ul>
+      </ul>
+    Section: Strategic Management
+    metadata:
+      Style: formulaCard
+
+  - Question: Compare and contrast stable alliance network to a dynamic alliance network.
+    Answer: |
+      TODO
+    metadata:
+      Style: formulaCard
