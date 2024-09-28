@@ -1,0 +1,108 @@
+Name: SDM Concepts
+
+Model:
+  name: 'Basic Model'
+  # Random (and unique) identifier
+  model_id: 1794800452
+  fields:
+    - Question
+    - Answer
+    - Section
+    - Notes
+  templates:
+    - name: 'Card 1'
+      qfmt: <div class="question">{{Question}}</div>
+      afmt: |
+        {{FrontSide}}
+        <div class="section">{{Section}}</div>
+        <hr id="answer">
+        <div class='backside'>
+          <div>{{Answer}}</div>
+          <div class="notes">{{Notes}}</div>
+        </div>
+  # Path should be relative to project root
+  css: 'assets/css/formulaCard.css'
+
+Cards:
+
+  - Question: Describe the different levels of diversification
+    Answer: |
+      <ul>
+        <li>(>95% of Revenue) <strong>Single Business</strong></li>
+        <li>(70%-95% of Revenue) <strong>Dominant Business</strong></li>
+        <li>(<70% of Revenue) <strong>Related Constrained</strong></li>
+          <ul>
+            <li>
+              All businesses share product, tech, & distribution linkages
+            </li>
+          </ul>
+        <li>(<70% of Revenue) <strong>Related Linked</strong></li>
+          <ul>
+            <li>
+              Business only share limited links.
+            </li>
+          </ul>
+        <li>(<70% of Revenue) <strong>Unrelated</strong></li>
+          <ul>
+            <li>
+              Firm's make no effort to share resources between businesses
+            </li>
+          </ul>
+      </ul>
+    Section: Strategic Management
+    metadata:
+      Style: formulaCard
+
+  - Question: Compare and contrast stable alliance network to a dynamic alliance network.
+    Answer: |
+      TODO
+    metadata:
+      Style: formulaCard
+
+  - Question: |
+      Critique the following: ROE is the best measure of performance, so we should use it for
+      incentive compensation purposes.
+    Section: Budgeting
+    Answer: |
+      Not necessarily; there could be cases where ROE makes no sense at all. For example, if the
+      business is not capitally intensive (e.g. ad agenceis, management consulting).
+      <br/>
+
+      Also, it is not the only variable that matters in determining shareholder value (but it is
+      very important).
+    metadata:
+      Style: formulaCard
+
+  - Question: |
+      Critique the following statement from your CEO: "We should do a partial IPO (carve-out) because
+      we will have cash to use for an acquisition and we can remain in control of the subsidiary."
+    Section: Valuation
+    Answer: |
+      CEO is correct that a carve-out would indeed provide us cash to use for other opportunities
+      and we would remain in control for the short term.
+      <br/>
+
+      However, it should be expected (and planned) that we eventually lose control of the subsidiary as it
+      attracts equity from outside investors that would eventually dilute our stake.
+      <br/>
+
+      A carve-out is best suited to produce real benefits only if the subsidiary is able to achieve
+      full independence from the parent company. This can avoid governance conflicts in the long-term and
+      ultimately have a greater chance to deliver positive returns to shareholders.
+    metadata:
+      Style: formulaCard
+
+  - Question: Describe the key features of a putty-clay model
+    Section: Business Dynamics
+    Answer: |
+      Factor requirements can be varied prior to investment (like putty), but once the firm commits to an investment,
+      the embodied factor requirements are fixed until that capital is discarded (it has hardened like clay)
+
+  - Question: Three distinct characteristics of "hard" factors of change management
+    Section: Hard side of Change Management
+    Answer: |
+      <ul>
+        <li>Companies are able to measure them in direct or indirect ways</li>
+        <li>Companies can easily communicate their importance both internally and externally</li>
+        <li>Businesses are capable of influencing those elements quickly</li>
+      </ul>
